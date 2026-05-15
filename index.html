@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إلى إيمان ❤️</title>
+    <style>
+        body {
+            background-color: #0b0214;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 20px;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle, #1a0b2e 10%, #0b0214 90%);
+        }
+
+        /* صفحة تسجيل الدخول */
+        .login-box {
+            margin-top: 40%;
+            background: rgba(26, 11, 46, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px #ff2a74;
+            backdrop-filter: blur(5px);
+        }
+        input {
+            width: 85%;
+            padding: 12px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 1px solid #ff2a74;
+            text-align: center;
+            font-size: 18px;
+            background: #25123e;
+            color: white;
+        }
+        button {
+            background: #ff2a74;
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 42, 116, 0.4);
+        }
+
+        #main-content { display: none; margin-top: 10px; }
+        
+        .header-title {
+            font-size: 40px;
+            color: #ff2a74;
+            text-shadow: 0 0 15px rgba(255, 42, 116, 0.8);
+            margin-bottom: 5px;
+            letter-spacing: 3px;
+        }
+        
+        .card {
+            background: #1a0b2e;
+            padding: 20px;
+            margin: 15px auto;
+            border-radius: 20px;
+            border: 1px solid #ff2a74;
+            max-width: 95%;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+        }
+
+        /* العداد المربع */
+        .timer-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .timer-box {
+            background: #25123e;
+            padding: 12px 5px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 42, 116, 0.5);
+        }
+        .timer-num {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff2a74;
+        }
+        .timer-label {
+            font-size: 13px;
+            color: #ccc;
+            margin-top: 3px;
+        }
+
+        /* أزرار الاعتراف */
+        .love-btn-clicked {
+            background: transparent;
+            border: 1px solid #ff2a74;
+            color: #ff2a74;
+            width: 90%;
+            padding: 12px;
+            margin: 8px auto;
+            border-radius: 50px;
+            font-size: 16px;
+            display: block;
+        }
+
+        /* شبكة الكروت الأربعة */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px auto;
+            max-width: 95%;
+        }
+        .reveal-card {
+            background: #25123e;
+            border: 1px solid #ff2a74;
+            border-radius: 15px;
+            padding: 20px 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        /* ألبوم الصور المتتالي */
+        .media-container { margin-top: 25px; }
+        .media-item {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 15px;
+            border: 2px solid #ff2a74;
+            margin: 15px auto 5px auto;
+            display: block;
+        }
+        .media-caption {
+            font-size: 15px;
+            color: #fff;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        /* بوب أب الرسالة النهائية */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(11, 2, 20, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #1a0b2e;
+            border: 2px solid #ff2a74;
+            padding: 30px 20px;
+            border-radius: 25px;
+            width: 80%;
+            max-width: 350px;
+            box-shadow: 0 0 25px #ff2a74;
+        }
+        .close-btn {
+            background: #ff2a74;
+            color: white;
+            border: none;
+            padding: 8px 30px;
+            border-radius: 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="login-page" class="login-box">
+        <h2>🤔 جاهزة؟</h2>
+        <p>كل اللي هنا هيفضل بيني وبينك طول العمر ❤️</p>
+        <input type="text" id="password" placeholder="l o v e">
+        <br>
+        <button onclick="checkPassword()">يلا بسرعة افتحي 😉❤️</button>
+    </div>
+
+    <div id="main-content">
+        <p style="font-size: 18px; margin-bottom: 0;">❤️ بحبك يا نور عيني ❤️</p>
+        <h1 class="header-title">EMAN</h1>
+        <p style="color: #ccc; font-size: 14px; margin-top: 0;">يوم ما عرفنا بعض كان يوم ولادتي ❤️</p>
+        
+        <div class="card">
+            <span style="color: #ff2a74; font-size: 18px;">❤️ أول مرة اتقابلنا</span>
+            <div style="background: #25123e; padding: 8px; border-radius: 10px; margin-top: 8px; border: 1px solid rgba(255,42,116,0.3);">
+                📅 2025-10-14
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>بداية عمري معاكي هيفضل شغال طول ما إحنا مع بعض:</h3>
+            <div class="timer-container">
+                <div class="timer-box"><div class="timer-num" id="years">0</div><div class="timer-label">سنة</div></div>
+                <div class="timer-box"><div class="timer-num" id="months">0</div><div class="timer-label">شهر</div></div>
+                <div class="timer-box"><div class="timer-num" id="days">0</div><div class="timer-label">يوم</div></div>
+                <div class="timer-box"><div class="timer-num" id="hours">0</div><div class="timer-label">ساعة</div></div>
+                <div class="timer-box"><div class="timer-num" id="minutes">0</div><div class="timer-label">دقيقة</div></div>
+                <div class="timer-box"><div class="timer-num" id="seconds">0</div><div class="timer-label">ثانية</div></div>
+            </div>
+        </div>
+
+        <div class="love-btn-clicked">💖 بحبك 💖</div>
+        <div class="love-btn-clicked">✨ بموت فيكي ✨</div>
+        <div class="love-btn-clicked">🔒 بعشقك 🔒</div>
+
+        <p style="margin-top: 25px; font-weight: bold; color: #ff2a74;">😉❤️ دوسي على الكروت دي</p>
+        
+        <div class="cards-grid">
+            <div class="reveal-card" onclick="reveal(this, 'محببتش 🔒')">❤️ الكارت الأول</div>
+            <div class="reveal-card" onclick="reveal(this, 'ولا بحب 🔒')">الثاني ❤️</div>
+            <div class="reveal-card" onclick="reveal(this, 'ولا هحب حد 🔒')">الثالث ❤️</div>
+            <div class="reveal-card" onclick="reveal(this, 'زي ما حبيتك يا اجمل حاجة ف حياتي ❤️')">الرابع ❤️</div>
+        </div>
+
+        <h3 style="color: #ff2a74; margin-top: 35px;">👇 حياتي باختصار هنا 👇</h3>
+        
+        <div class="media-container">
+            <img src="photo1.jpg" class="media-item">
+            <p class="media-caption">بحبك يا نور عيني ❤️</p>
+
+            <img src="photo2.jpg" class="media-item">
+            <p class="media-caption">كل لحظة في عمري بتمنى أكون معاكي فيها 🌹</p>
+
+            <video class="media-item" controls>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+            <p class="media-caption">كل سنة وإحنا مع بعض يا روحي ✨</p>
+        </div>
+
+        <button style="margin: 30px auto; width: 90%; display: block; background: linear-gradient(45deg, #ff2a74, #ff71a2); padding: 15px; border-radius: 50px;" onclick="openModal()">
+            🥰❤ لسه مخلصتش دوسي هنا 🔒
+        </button>
+        
+        <audio id="bg-music" src="song.mp3" loop></audio>
+    </div>
+
+    <div id="message-modal" class="modal">
+        <div class="modal-content">
+            <h2 style="color: #ff2a74; margin-bottom: 15px;">إلى إيمان 💌</h2>
+            <p style="font-size: 17px; line-height: 1.6; color: #fff;">
+                "ربنا يخليكي ليا وما يحرمنيش منك أبداً يا روح قلبي.. <br>
+                انتي أجمل صدفة وأحلى حاجة حصلت في دنيتي كلها، ويارب العمر كله نفضل مع بعض ومفيش أي حاجة تفرقنا." 🥰❤️❤️
+            </p>
+            <button class="close-btn" onclick="closeModal()">إغلاق ❌</button>
+        </div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var pass = document.getElementById("password").value;
+            if(pass.toLowerCase() == "love") {
+                document.getElementById("login-page").style.display = "none";
+                document.getElementById("main-content").style.display = "block";
+                
+                var audio = document.getElementById("bg-music");
+                audio.play().catch(function(e) { console.log("Bypass"); });
+
+                setInterval(updateTimer, 1000);
+            } else {
+                alert("الباسورد غلط يا روحي! ركزي شوية 😂❤️");
+            }
+        }
+
+        function reveal(element, text) {
+            element.innerHTML = text;
+            element.style.background = '#ff2a74';
+            element.style.color = 'white';
+            element.style.border = '1px solid #fff';
+        }
+
+        function openModal() { document.getElementById("message-modal").style.display = "flex"; }
+        function closeModal() { document.getElementById("message-modal").style.display = "none"; }
+
+        function updateTimer() {
+            const startDate = new Date("2025-10-14T00:00:00");
+            const now = new Date();
+            let diff = now - startDate;
+
+            let seconds = Math.floor(diff / 1000);
+            let minutes = Math.floor(seconds / 60);
+            let hours = Math.floor(minutes / 60);
+            let days = Math.floor(hours / 24);
+
+            let years = Math.floor(days / 365);
+            let remainingDays = days % 365;
+            let months = Math.floor(remainingDays / 30);
+            let finalDays = remainingDays % 30;
+
+            document.getElementById("years").innerHTML = years;
+            document.getElementById("months").innerHTML = months;
+            document.getElementById("days").innerHTML = finalDays;
+            document.getElementById("hours").innerHTML = hours % 24;
+            document.getElementById("minutes").innerHTML = minutes % 60;
+            document.getElementById("seconds").innerHTML = seconds % 60;
+        }
+    </script>
+</body>
+</html>
